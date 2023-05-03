@@ -19,9 +19,9 @@ jobs:
         run: |
           $env:Path = "C:\mingw64\bin;$env:Path"
           clang++ main.cpp -static
-          if (Test-Path ".\a.exe") { .\a.exe }
+          if (Get-Item ".\a.exe" -ErrorAction SilentlyContinue) { .\a.exe }
       - name: Test Clang Static Build With -pthread flag
         run: |
           $env:Path = "C:\mingw64\bin;$env:Path"
           clang++ main.cpp -static -pthread
-          if (Test-Path ".\a.exe") { .\a.exe }
+          if (Get-Item ".\a.exe" -ErrorAction SilentlyContinue) { .\a.exe }
