@@ -14,8 +14,9 @@ jobs:
         run: |
           (new-object System.Net.WebClient).DownloadFile('https://github.com/brechtsanders/winlibs_mingw/releases/download/13.1.0-16.0.2-11.0.0-ucrt-r1/winlibs-x86_64-mcf-seh-gcc-13.1.0-llvm-16.0.2-mingw-w64ucrt-11.0.0-r1.7z','mingw64.7z')
           7z x -aoa -oC:\ mingw64.7z ; rm mingw64.7z
-          ls C:\
-      - name: Run a multi-line script
+          ls C:\mingw64
+      - name: Test
         run: |
-          $env:Path = "C:\mingw64;$env:Path"
+          $env:Path = "C:\mingw64\bin;$env:Path"
           clang++ main.cpp -static
+          ./a.exe
