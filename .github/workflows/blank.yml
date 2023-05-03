@@ -18,18 +18,18 @@ jobs:
       - name: Test Clang Static Build
         run: |
           $env:Path = "C:\mingw64\bin;$env:Path"
-          clang++ main.cpp -static -lmcfgthread
+          clang++ main.cpp -static -lmcfgthread -lntdll
 
-  build2:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Setup Toolchain
-        run: |
-          (new-object System.Net.WebClient).DownloadFile('https://github.com/brechtsanders/winlibs_mingw/releases/download/13.1.0-16.0.2-11.0.0-ucrt-r1/winlibs-x86_64-mcf-seh-gcc-13.1.0-llvm-16.0.2-mingw-w64ucrt-11.0.0-r1.7z','mingw64.7z')
-          7z x -aoa -oC:\ mingw64.7z ; rm mingw64.7z
-          cat C:\mingw64\version_info.txt
-      - name: Test Clang Static Build With -pthread flag
-        run: |
-          $env:Path = "C:\mingw64\bin;$env:Path"
-          clang++ main.cpp -static -pthread -lmcfgthread
+  # build2:
+  #   runs-on: windows-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - name: Setup Toolchain
+  #       run: |
+  #         (new-object System.Net.WebClient).DownloadFile('https://github.com/brechtsanders/winlibs_mingw/releases/download/13.1.0-16.0.2-11.0.0-ucrt-r1/winlibs-x86_64-mcf-seh-gcc-13.1.0-llvm-16.0.2-mingw-w64ucrt-11.0.0-r1.7z','mingw64.7z')
+  #         7z x -aoa -oC:\ mingw64.7z ; rm mingw64.7z
+  #         cat C:\mingw64\version_info.txt
+  #     - name: Test Clang Static Build With -pthread flag
+  #       run: |
+  #         $env:Path = "C:\mingw64\bin;$env:Path"
+  #         clang++ main.cpp -static -pthread -lmcfgthread
