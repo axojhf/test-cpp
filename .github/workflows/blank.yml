@@ -18,8 +18,8 @@ jobs:
       - name: Test Clang Static Build
         run: |
           $env:Path = "C:\mingw64\bin;$env:Path"
-          clang++ main.cpp -static
-          
+          clang++ main.cpp -static -lmcfgthread
+
   build2:
     runs-on: windows-latest
     steps:
@@ -32,4 +32,4 @@ jobs:
       - name: Test Clang Static Build With -pthread flag
         run: |
           $env:Path = "C:\mingw64\bin;$env:Path"
-          clang++ main.cpp -static -pthread
+          clang++ main.cpp -static -pthread -lmcfgthread
