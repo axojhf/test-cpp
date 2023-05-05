@@ -19,7 +19,8 @@ jobs:
       - name: Test Clang Static Build
         run: |
           $env:Path = "C:\mingw64\bin;$env:Path"
-          clang++ main.cpp -static -lmcfgthread -lntdll
+          clang++ main.cpp -static
+          # clang++ main.cpp -static -lmcfgthread -lntdll
 
   # build2:
   #   runs-on: windows-latest
