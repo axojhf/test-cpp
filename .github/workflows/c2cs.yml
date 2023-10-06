@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Init
         run: |
-          cd C:\ ; git clone --depth=1 https://github.dev/axojhf/test-cpp -b c2cs
+          cd C:\ ; git clone --depth=1 https://github.com/axojhf/test-cpp -b c2cs
       - name: Setup Toolchain
         run: |
           dotnet tool install bottlenoselabs.castffi.tool -g ; dotnet tool install bottlenoselabs.c2cs.tool --global 
