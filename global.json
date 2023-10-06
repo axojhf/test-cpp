@@ -1,7 +1,7 @@
 {
-    "inputFilePath": "C:/c2cs/mdksdk/global.h",
+    "inputFilePath": "C:/test-cpp/mdksdk/global.h",
     "userIncludeDirectories": [
-      "C:/c2cs/mdksdk/"
+      "C:/test-cpp/mdksdk/"
       ],
     "platforms": {
       "x86_64-pc-windows-msvc": {},

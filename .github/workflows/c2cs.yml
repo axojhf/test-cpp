@@ -16,5 +16,5 @@ jobs:
         run: |
           dotnet tool install bottlenoselabs.castffi.tool -g ; dotnet tool install bottlenoselabs.c2cs.tool --global 
           cd C:\test-cpp
-          castffi extract global.json
+          castffi extract C:\test-cpp\global.json
           ls
