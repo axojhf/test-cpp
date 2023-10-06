@@ -15,6 +15,6 @@ jobs:
       - name: Setup Toolchain
         run: |
           dotnet tool install bottlenoselabs.castffi.tool -g ; dotnet tool install bottlenoselabs.c2cs.tool --global 
-          cd C:\c2cs
+          cd C:\test-cpp
           castffi extract global.json
           ls
